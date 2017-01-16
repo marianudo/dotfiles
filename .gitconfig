@@ -5,10 +5,7 @@
 	email = mariano@geeny.io
 [alias]
 	# Typical shortcuts
-	co = checkout
-	ci = commit
 	st = status -sb
-	br = branch
 
 	#Prints the type of a given object (commit, tag, etc)
 	type = cat-file -t
