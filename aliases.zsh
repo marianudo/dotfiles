@@ -19,10 +19,6 @@ alias dockercleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(
 # Delete all stopped containers and untagged images.
 alias dockerclean='dockercleanc || true && dockercleani'
 
-# Configure Docker environment
-alias dockerup='docker-machine start default'
-alias si='eval "$(docker-machine env default)"'
-
 # Utilities for projects directory layout creation
 alias laydirjava='mkdir -p src/{main,test}/{java,resources}'
 alias laydirscala='mkdir -p src/{main,test}/{scala,resources}'
