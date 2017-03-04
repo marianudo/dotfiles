@@ -23,10 +23,3 @@ alias dockerclean='dockercleanc || true && dockercleani'
 alias laydirjava='mkdir -p src/{main,test}/{java,resources}'
 alias laydirscala='mkdir -p src/{main,test}/{scala,resources}'
 alias laydirsjavascala='mkdir -p src/{main,test}/{java,scala,resources}'
-
-# Google Cloud Platform
-alias rabbitmqtunnel='gcloud compute ssh --ssh-flag=-L15672:localhost:15672 --project=optimal-life-112611 --zone europe-west1-b rabbitmq1-stats-node'
-alias gcmongo='gcloud compute --project "optimal-life-112611" ssh --zone "europe-west1-b" "mongodb1-instance-1"'
-alias gcnode1='gcloud compute --project "optimal-life-112611" ssh --zone "europe-west1-b" "gke-gennion-cluster-d8274901-node-0368"'
-alias gcnode2='gcloud compute --project "optimal-life-112611" ssh --zone "europe-west1-b" "gke-gennion-cluster-d8274901-node-5jec"'
-alias gcrabbit='gcloud compute --project "optimal-life-112611" ssh --zone "europe-west1-b" "google-developer-console-rabbitmq-rabbitmq1-ram-node-1"'
