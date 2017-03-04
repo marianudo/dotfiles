@@ -2,7 +2,7 @@
     editor = /usr/bin/vim
 [user]
 	name = Mariano Navas
-	email = mariano@geeny.io
+	email = marianudo@gmail.com
 [alias]
 	# Typical shortcuts
 	st = status -sb
