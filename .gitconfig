@@ -70,8 +70,9 @@
     ui = auto
 [core]
     excludesfile = /Users/marianonavas/.gitignore_global
-    autocrlf = auto
+    autocrlf = input
     editor = vim
+    eol = LF
 [push]
     default = nothing
 [difftool "kdiff3"]
