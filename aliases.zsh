@@ -6,7 +6,7 @@ alias ff="find . -name"
 alias dh="dirs -v"
 
 # Java
-alias java7="export JAVA_HOME=`/usr/libexec/java_home -v1.7`"
+# alias java7="export JAVA_HOME=`/usr/libexec/java_home -v1.7`"
 alias java8="export JAVA_HOME=`/usr/libexec/java_home -v1.8`"
 
 # Docker
@@ -23,3 +23,9 @@ alias dockerclean='dockercleanc || true && dockercleani'
 alias laydirjava='mkdir -p src/{main,test}/{java,resources}'
 alias laydirscala='mkdir -p src/{main,test}/{scala,resources}'
 alias laydirsjavascala='mkdir -p src/{main,test}/{java,scala,resources}'
+
+# Find out how are my line endings
+# Grep all lines ended with CRLF
+alias findcrlf = "grep -U $'\x0D'"
+# Grep all lines ended with LF
+alias findlf = "grep -U $'\x0A'"
