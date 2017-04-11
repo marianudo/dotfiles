@@ -1,69 +1,65 @@
-[core]
-    editor = /usr/bin/vim
 [user]
-	name = Mariano Navas
-	email = marianudo@gmail.com
+    name = Mariano Navas
+    email = mariano.navas@clluc.com
 [alias]
-	# Typical shortcuts
-	st = status -sb
+    # Typical shortcuts
+    st = status -sb
 
-	#Prints the type of a given object (commit, tag, etc)
-	type = cat-file -t
+    #Prints the type of a given object (commit, tag, etc)
+    type = cat-file -t
 
-	# Gives a summary of any object (try e.g. HEAD)
-	dump = cat-file -p
+    # Gives a summary of any object (try e.g. HEAD)
+    dump = cat-file -p
 
-	# List current branch commits in the more concise way I can think of (just short SHA and message)
-	slog = log --pretty=oneline --abbrev-commit
-	
-	# Leaves your working copy in the very same state of your HEAD. Removes all staged, unstaged and untracked changes. WARNING: this is a highly destructive operation, use it with extreme caution
-	wipe = !git reset --hard && git clean -fd
+    # List current branch commits in the more concise way I can think of (just short SHA and message)
+    slog = log --pretty=oneline --abbrev-commit
 
-	# List commits in current branch in a very concise and compact way (graph format)
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    # Leaves your working copy in the very same state of your HEAD. Removes all staged, unstaged and untracked changes. WARNING: this is a highly destructive operation, use it with extreme caution
+    wipe = !git reset --hard && git clean -fd
 
-	# List commits in current branch in a very concise and compact way (list format)
-	lglist = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    # List commits in current branch in a very concise and compact way (graph format)
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-	# Show files involved in the last commit (HEAD revision)
-	filesInCi = show --pretty="format:" --name-only
+    # List commits in current branch in a very concise and compact way (list format)
+    lglist = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-	# Alias to list all my git alias
-	alias = config --get-regexp alias
+    # Show files involved in the last commit (HEAD revision)
+    filesInCi = show --pretty="format:" --name-only
 
-	# Make it easy to resolve merge conflicts with kdiff3 (the best three way merge tool I've ever known).
-	kdiff = mergetool -t kdiff3
+    # Alias to list all my git alias
+    alias = config --get-regexp alias
 
-	# Print commits graph for all branches in a pretty useful, both concise and informative format
-	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+    # Make it easy to resolve merge conflicts with kdiff3 (the best three way merge tool I've ever known).
+    kdiff = mergetool -t kdiff3
 
-	#Unstage current working copy changes
-	unstage = reset HEAD --
+    # Print commits graph for all branches in a pretty useful, both concise and informative format
+    lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
 
-	# Push all changes, including submodules
-	pushall = push --recurse-submodules=on-demand
-	
-	# Shows last commit author
-	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
-	
-	# Show a summary of last commit (show you where you currently are)
+    #Unstage current working copy changes
+    unstage = reset HEAD --
+
+    # Push all changes, including submodules
+    pushall = push --recurse-submodules=on-demand
+
+    # Shows last commit author
+    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+
+    # Show a summary of last commit (show you where you currently are)
     whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 
-	# List commits made by an specific author (current branch)
-	lci = "!sh -c \"git log --no-merges --author $1\" -"
-	
-	pullr="pull --rebase"
+    # List commits made by an specific author (current branch)
+    lci = "!sh -c \"git log --no-merges --author $1\" -"
+    pullr="pull --rebase"
 
-	# List remote tags
-	rtagl='git ls-remote --tags ./.'
-	
-	# Delete a branch both locally and remotely
-	brtotaldelete="!sh -c \"git branch -d $2 && git branch -d -r $1/$2 && git push $1 :$2\" -"
-	
-	addall = add -A :/
-	
-	# List files changed in my current branch with respect to master
-	ldf = "!git diff --name-only \"$(git merge-base HEAD ${1:-master})\""
+    # List remote tags
+    rtagl='git ls-remote --tags ./.'
+
+    # Delete a branch both locally and remotely
+    brtotaldelete="!sh -c \"git branch -d $2 && git branch -d -r $1/$2 && git push $1 :$2\" -"
+    addall = add -A :/
+
+    # List files changed in my current branch with respect to master
+    ldf = "!git diff --name-only \"$(git merge-base HEAD ${1:-master})\""
 
     # List branches that contain a specific commit
     bwc = "!git branch --contains $1"
@@ -71,13 +67,13 @@
     # Rank contributors to current repo
     rank = "shortlog -nse --no-merges"
 [color]
-	ui = auto
+    ui = auto
 [core]
-	excludesfile = /Users/marianonavas/.gitignore_global
-	autocrlf = input
-	editor = vim
+    excludesfile = /Users/marianonavas/.gitignore_global
+    autocrlf = auto
+    editor = vim
 [push]
-	default = nothing
+    default = nothing
 [difftool "kdiff3"]
     path = kdiff3
     trustExitCode = false
@@ -91,6 +87,6 @@
 [mergetool]
     keepBackup = false
 [merge]
-	tool =kdiff3 
+    tool =kdiff3
 [status]
-	displayCommentPrefix = true
+    displayCommentPrefix = true
