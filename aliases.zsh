@@ -33,3 +33,5 @@ alias findlf="grep -U $'\x0A'"
 # Remove git conflict resolution cache files
 alias rmorig='find . -name "*.orig" -exec rm {} \;'
 
+# Git; show a graph for all commits including stashes
+# alias gshow="git log --graph --oneline --decorate $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' ) > /dev/null"
