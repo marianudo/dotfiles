@@ -26,6 +26,6 @@ alias laydirsjavascala='mkdir -p src/{main,test}/{java,scala,resources}'
 
 # Find out how are my line endings
 # Grep all lines ended with CRLF
-alias findcrlf = "grep -U $'\x0D'"
+alias findcrlf="grep -U $'\x0D'"
 # Grep all lines ended with LF
-alias findlf = "grep -U $'\x0A'"
+alias findlf="grep -U $'\x0A'"
