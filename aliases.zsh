@@ -19,6 +19,13 @@ alias dockercleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(
 # Delete all stopped containers and untagged images.
 alias dockerclean='dockercleanc || true && dockercleani'
 
+# Misc (to really collect a lot of space)
+alias docker-clean-unused='docker system prune --all --force --volumes'
+alias docker-clean-all='docker stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
+
+# Find out IP address of a container
+alias dinspect="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+
 # Utilities for projects directory layout creation
 alias laydirjava='mkdir -p src/{main,test}/{java,resources}'
 alias laydirscala='mkdir -p src/{main,test}/{scala,resources}'
@@ -35,3 +42,16 @@ alias rmorig='find . -name "*.orig" -exec rm {} \;'
 
 # Git; show a graph for all commits including stashes
 # alias gshow="git log --graph --oneline --decorate $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' ) > /dev/null"
+
+# SolidGo aliases
+alias pgsolidgo='docker run --name postgres-db -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d postgres -c ssl="on" -c ssl_cert_file="/etc/ssl/certs/ssl-cert-snakeoil.pem" -c ssl_key_file="/etc/ssl/private/ssl-cert-snakeoil.key"'
+
+# SBT
+alias s='sbt -v -mem 6144'
+alias sbt='sbt -v'
+
+# Bitcoin core regtest in Docker
+alias btcd='docker run -v bitcoind-data:/User/marianonavas/.bitcoind --name=bitcoind-node -d \
+     -p 8333:8333 \
+     -p 127.0.0.1:8332:8332 \
+     kylemanna/bitcoind'
