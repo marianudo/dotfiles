@@ -7,7 +7,7 @@ alias dh="dirs -v"
 
 # Java
 # alias java7="export JAVA_HOME=`/usr/libexec/java_home -v1.7`"
-alias java8="export JAVA_HOME=`/usr/libexec/java_home -v1.8`"
+#alias java8="export JAVA_HOME=`/usr/libexec/java_home -v1.8`"
 
 # Docker
 # Delete all stopped containers.
@@ -55,3 +55,6 @@ alias btcd='docker run -v bitcoind-data:/User/marianonavas/.bitcoind --name=bitc
      -p 8333:8333 \
      -p 127.0.0.1:8332:8332 \
      kylemanna/bitcoind'
+
+# Format an SD card for raspberry Pi
+alias formatpi='sudo diskutil eraseDisk FAT32 RASPBIAN MBRFormat /dev/disk2'
