@@ -43,18 +43,9 @@ alias rmorig='find . -name "*.orig" -exec rm {} \;'
 # Git; show a graph for all commits including stashes
 # alias gshow="git log --graph --oneline --decorate $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' ) > /dev/null"
 
-# SolidGo aliases
-alias pgsolidgo='docker run --name postgres-db -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d postgres -c ssl="on" -c ssl_cert_file="/etc/ssl/certs/ssl-cert-snakeoil.pem" -c ssl_key_file="/etc/ssl/private/ssl-cert-snakeoil.key"'
-
 # SBT
 alias s='sbt -v -mem 6144'
 alias sbt='sbt -v'
-
-# Bitcoin core regtest in Docker
-alias btcd='docker run -v bitcoind-data:/User/marianonavas/.bitcoind --name=bitcoind-node -d \
-     -p 8333:8333 \
-     -p 127.0.0.1:8332:8332 \
-     kylemanna/bitcoind'
 
 # Format an SD card for raspberry Pi
 alias formatpi='sudo diskutil eraseDisk FAT32 RASPBIAN MBRFormat /dev/disk2'
