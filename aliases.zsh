@@ -58,3 +58,7 @@ alias btcd='docker run -v bitcoind-data:/User/marianonavas/.bitcoind --name=bitc
 
 # Format an SD card for raspberry Pi
 alias formatpi='sudo diskutil eraseDisk FAT32 RASPBIAN MBRFormat /dev/disk2'
+
+# GPG common actions
+alias listgpgkeys='gpg --list-secret-keys --keyid-format LONG'
+alias showgpgkey='gpg --armor --export'
