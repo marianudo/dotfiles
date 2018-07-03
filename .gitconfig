@@ -1,6 +1,7 @@
 [user]
     name = Mariano Navas
-    email = mariano.navas@clluc.com
+	email = contact@marianonavas.me
+	signingkey = 5BEC29B77C224009
 [alias]
     # Typical shortcuts
     st = status -sb
@@ -88,6 +89,8 @@
 [mergetool]
     keepBackup = false
 [merge]
-    tool =kdiff3
+    tool = kdiff3
 [status]
     displayCommentPrefix = true
+[commit]
+    gpgSign = true
